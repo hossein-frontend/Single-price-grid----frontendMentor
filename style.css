@@ -1,0 +1,133 @@
+/* -------------------------------------------------------------------------- */
+/*                                  CSS Reset                                 */
+/* -------------------------------------------------------------------------- */
+
+@import url("https://fonts.googleapis.com/css2?family=Karla:ital,wght@0,200..800;1,200..800&display=swap");
+
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+html {
+  /* change to 10px for easy use of rem unit */
+  font-size: 62.5%;
+}
+* {
+  margin: 0;
+}
+body {
+  display: grid;
+  min-height: 100vh;
+  place-items: center;
+  place-content: center;
+  font-size: 1.5rem;
+  font-family: "karla", sans-serif;
+  line-height: 1.5;
+  background-color: var(--clr-tint-grey);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+/* color  */
+
+:root {
+  --clr-cyan: 179, 62%, 43%;
+  --clr-yellow: hsl(71, 73%, 54%);
+
+  /* Text color */
+
+  --clr-tint-grey: hsl(204, 43%, 93%);
+  --clr-grey-blue: hsl(218, 22%, 67%);
+}
+
+h1 {
+  color: hsl(var(--clr-cyan), 1);
+}
+
+p {
+  color: var(--clr-grey-blue);
+}
+
+/* ---------------------------- end of CSS Reset ---------------------------- */
+
+/* container styleing */
+
+.price {
+  width: min(80%, 600px);
+  display: grid;
+  border-radius: 3px;
+}
+
+.price > * {
+  padding: 2.5rem;
+  display: grid;
+  grid-auto-rows: min-content;
+}
+
+.heading-3--green {
+  color: var(--clr-yellow);
+}
+
+.heading-2 {
+  color: var(--clr-tint-grey);
+}
+
+.price__heading {
+  background-color: #fff;
+  display: grid;
+  gap: 1rem;
+}
+.price__main {
+  display: grid;
+  gap: 1rem;
+  background-color: hsla(var(--clr-cyan), 1);
+}
+.price__footer {
+  display: grid;
+  gap: 1rem;
+  background-color: hsla(var(--clr-cyan), 0.9);
+}
+
+li {
+  color: var(--clr-tint-grey);
+}
+.price__main__cta {
+  color: var(--clr-tint-grey);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.text--white {
+  color: white;
+}
+span {
+  opacity: 0.7;
+}
+strong {
+  font-size: 3rem;
+}
+.btn {
+  text-decoration: none;
+  background-color: var(--clr-yellow);
+  padding: 1rem 2rem;
+  border-radius: 5px;
+  align-self: flex-end;
+  color: white;
+  text-align: center;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+@media (min-width: 700px) {
+  .price {
+    margin-block: 3rem;
+    grid-template-columns: repeat(2, [col-start] 1fr [col-end]);
+  }
+
+  .price__heading {
+    grid-column: col-start 1 / col-end 2;
+  }
+}
